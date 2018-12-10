@@ -5,6 +5,14 @@ $(document).ready(function() {
       yourOpponent = false;
       playersArray = [];
       enemyDefeatedCount = 0;
+
+      //audio variable
+
+      audioScum = new Audio('assets/images/04 Johnny Was a Soldier.m4a')
+      audioElder = new Audio('assets/images/02 Sons of Northern Darkness.m4a')
+      audioLilBarry = new Audio('assets/images/03 Harder Than You Think.m4a')
+      audioLarry = new Audio('assets/images/03 Bennie and the Jets.m4a')
+      audioLoss = new Audio('assets/images/02 Im a Loser.m4a')
       // creating characters and stats and assigning them to an array 
       var firstPlayer = {
         name: 'Scum',
@@ -26,7 +34,7 @@ $(document).ready(function() {
         name: 'Lil Barry',
         healthPoints: 90,
         attackPower: Math.floor((Math.random() * 10) + 5),
-        counterAttackPower: Math.floor((Math.random() * 10) +3),
+        counterAttackPower: Math.floor((Math.random() * 10) +20),
         numberOfAttacks: 1
       }
     
@@ -107,7 +115,8 @@ $(document).ready(function() {
           enemyDefeatedCount++;
     
           // check if all enemies are defeated
-          if (enemyDefeatedCount === 3 ) {
+          if (enemyDefeatedCount === 3 && x.name === 'Scum') {
+              audioScum.play();
             $('.attack').hide();
             $('.playerAttacks').hide();
             $('.opponentAttacks').hide();
@@ -119,9 +128,56 @@ $(document).ready(function() {
             $('.player').html('Your character is victorious!');
             $('.won').html('<h1>' + 'You won! Hit ' + '<button onClick="window.location.reload()" class="winButton">' + '<h2 class="winButton">' + 'Restart' + '</h2>' + '</button>' + ' if you want to play again!' + '</h1>');
           }
+          
+          if(enemyDefeatedCount === 3 && x.name === 'Elder'){
+            audioElder.play();
+            $('.attack').hide();
+            $('.playerAttacks').hide();
+            $('.opponentAttacks').hide();
+            $('#instructions').html('');
+            $('.fight').html('');
+            $('.enemies').html('');
+            $('.opponent').html('');
+            $('.status').html('<h2>' + 'You defeated your enemies!' + '</h2>');
+            $('.player').html('Your character is victorious!');
+            $('.won').html('<h1>' + 'You won! Hit ' + '<button onClick="window.location.reload()" class="winButton">' + '<h2 class="winButton">' + 'Restart' + '</h2>' + '</button>' + ' if you want to play again!' + '</h1>');
+          }
+             
+          
+              
+          if(enemyDefeatedCount === 3 && x.name === 'Lil Barry'){
+            audioLilBarry.play();
+            $('.attack').hide();
+            $('.playerAttacks').hide();
+            $('.opponentAttacks').hide();
+            $('#instructions').html('');
+            $('.fight').html('');
+            $('.enemies').html('');
+            $('.opponent').html('');
+            $('.status').html('<h2>' + 'You defeated your enemies!' + '</h2>');
+            $('.player').html('Your character is victorious!');
+            $('.won').html('<h1>' + 'You won! Hit ' + '<button onClick="window.location.reload()" class="winButton">' + '<h2 class="winButton">' + 'Restart' + '</h2>' + '</button>' + ' if you want to play again!' + '</h1>');
+          }
+             
+             
+          if(enemyDefeatedCount === 3 && x.name === 'Larry'){
+            audioLarry.play();
+            $('.attack').hide();
+            $('.playerAttacks').hide();
+            $('.opponentAttacks').hide();
+            $('#instructions').html('');
+            $('.fight').html('');
+            $('.enemies').html('');
+            $('.opponent').html('');
+            $('.status').html('<h2>' + 'You defeated your enemies!' + '</h2>');
+            $('.player').html('Your character is victorious!');
+            $('.won').html('<h1>' + 'You won! Hit ' + '<button onClick="window.location.reload()" class="winButton">' + '<h2 class="winButton">' + 'Restart' + '</h2>' + '</button>' + ' if you want to play again!' + '</h1>');
+          }
+             
+          
     
         } 
-        else {
+        else  {
           x.healthPoints -= y.counterAttackPower;
           x.element.find('.score').html(x.healthPoints);
         }
@@ -131,6 +187,7 @@ $(document).ready(function() {
         // Determines losing sequence
         if (x.healthPoints <= 0) {
           x.element.hide();
+          audioLoss.play()
            $('.attack').hide();
            $('.playerAttacks').hide();
           $('.opponentAttacks').hide();
