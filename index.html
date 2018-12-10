@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang='en-us'>
+
+<head>
+	<meta charset='UTF-8'>
+	<meta name='viewport' content='width=device-width, initial-scale=1.0'>
+	<title>Music Wars RPG</title>
+    <link rel='stylesheet' type='text/css' href='assets/css/reset.css'>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+	<link rel='stylesheet' type='text/css' href='assets/css/style.css'>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+</head>	
+<body>
+        <div class="container">
+        <div class='row'>
+            <div class='col-md-12' style='text-align: center;'>
+                <h1>Music Wars</h1>
+                <br>
+                <h2>Choose your fighter</h2>
+            </div>
+        </div>
+        
+        
+        
+        <div class='inactive'>
+        <!-- characters start here -->
+                <div class='character' data-player='1'>
+                    <h5>Scum</h5>
+                    <img src='assets/images/scum.jpg' alt='Scum'>
+                    <h5>Health Points</h5><h5 class='score'>130</h5>
+                </div>
+                <div class='character' data-player='2'>
+                    <h5>Elder</h5>
+                    <img src='assets/images/elder.jpg' alt='Elder'>
+                    <h5>Health Points</h5><h5 class='score'>160</h5>
+                </div>
+                <div class='character' data-player='3'>
+                    <h5>Lil Barry</h5>
+                    <img src='assets/images/lil-barry.jpg' alt='Lil Barry'>
+                    <h5>Health Points</h5><h5 class='score'>90</h5>
+                </div>
+                <div class='character' data-player='4'>
+                    <h5>Larry</h5>
+                    <img src='assets/images/larry.jpg' alt='Larry'>
+                    <h5>Health Points</h5><h5 class='score'>100</h5>
+                </div>
+        </div>
+                <h2 class='player'>Your Character</h2>
+        
+                <!-- on click your hero goes here that you select -->
+                <h2 class='fight'>Fight Section </h2>
+                <button class='attack'>
+                    <h4>Attack</h4>
+                </button>
+        
+                <!--shows damage from fight-->
+                <p class='playerAttacks'></p>
+                <p class='opponentAttacks'></p>
+        
+                <h2 class='opponent'>Your Opponent</h2>
+                <!-- when you select opponet they are appended here -->
+                <span class='status'></span>
+                <h2 class='enemies'>Enemies Left to Defeat</h2>
+                <br>
+                <!-- resets game -->
+                <button onClick='window.location.reload()'>
+                    <h4>Restart</h4>
+                </button>
+                <!-- victory or loss message is broadcasted here -->
+                <span class='lost won'></span>
+            </div>
+        </div>
+<script type='text/javascript' src='assets/javascript/game.js'></script>
+
+</body>
+</html>
