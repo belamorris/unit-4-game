@@ -13,7 +13,7 @@ $(document).ready(function() {
       audioLilBarry = new Audio('assets/images/03 Harder Than You Think.m4a')
       audioLarry = new Audio('assets/images/03 Bennie and the Jets.m4a')
       audioLoss = new Audio('assets/images/02 Im a Loser.m4a')
-      // creating characters and stats and assigning them to an array 
+      // creating characters and stats 
       var firstPlayer = {
         name: 'Scum',
         healthPoints: 130,
@@ -51,7 +51,7 @@ $(document).ready(function() {
       playersArray.push(thirdPlayer);
       playersArray.push(fourthPlayer);
     
-      // Sets game state
+      // Start game function
     
       function startGame() {
         yourCharacter = false;
@@ -114,7 +114,7 @@ $(document).ready(function() {
           $('.status').html('<h2>' + y.name + ' is defeated!' + '</h2>');
           enemyDefeatedCount++;
     
-          // check if all enemies are defeated
+          // check if all enemies are defeated and the winner is scum
           if (enemyDefeatedCount === 3 && x.name === 'Scum') {
               audioScum.play();
             $('.attack').hide();
@@ -128,7 +128,7 @@ $(document).ready(function() {
             $('.player').html('Your character is victorious!');
             $('.won').html('<h1>' + 'You won! Hit ' + '<button onClick="window.location.reload()" class="winButton">' + '<h2 class="winButton">' + 'Restart' + '</h2>' + '</button>' + ' if you want to play again!' + '</h1>');
           }
-          
+          // check if all enemies are defeated and the winner is Elder
           if(enemyDefeatedCount === 3 && x.name === 'Elder'){
             audioElder.play();
             $('.attack').hide();
@@ -144,7 +144,7 @@ $(document).ready(function() {
           }
              
           
-              
+              //check if all enemies are defeated and the winner is lil barry
           if(enemyDefeatedCount === 3 && x.name === 'Lil Barry'){
             audioLilBarry.play();
             $('.attack').hide();
@@ -159,7 +159,7 @@ $(document).ready(function() {
             $('.won').html('<h1>' + 'You won! Hit ' + '<button onClick="window.location.reload()" class="winButton">' + '<h2 class="winButton">' + 'Restart' + '</h2>' + '</button>' + ' if you want to play again!' + '</h1>');
           }
              
-             
+             //check if all enemies are defeated and the winner is Larry
           if(enemyDefeatedCount === 3 && x.name === 'Larry'){
             audioLarry.play();
             $('.attack').hide();

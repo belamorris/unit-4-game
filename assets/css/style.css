@@ -1,10 +1,13 @@
-body {
-    background-color: olive;
+body {background-image: url(../../assets/images/depositphotos_14937965-stock-illustration-rockroll-stage-cartoon.jpg);
+    
+    background-size: cover; 
+    
     text-align: center;
 }
 
 h1 {
-	font-family: 'Oswald', sans-serif;
+	font-family: "Comic Sans MS", cursive, sans-serif;	
+	
 	font-size: 48px;
 	
 	margin: 20px;
@@ -17,7 +20,7 @@ h1 {
 }
 
 h2 {
-	font-family: 'Oswald', sans-serif;
+	font-family: "Comic Sans MS", cursive, sans-serif;
 	font-size: 28px;
 	margin: 10px 50px;
 	text-shadow:
@@ -28,13 +31,13 @@ h2 {
 	display: block;
 }
 h4 {
-	font-family: 'Oswald', sans-serif;
+	font-family: "Comic Sans MS", cursive, sans-serif;
 	font-size: 15px;
 	text-align: center;
 	display: inline-block;
 }
 h5 {
-	font-family: 'Oswald', sans-serif;
+	font-family: "Comic Sans MS", cursive, sans-serif;
 	font-size: 15px;
 	text-align: center;
 }
@@ -46,7 +49,7 @@ img {
 }
 
 
-/* establishes character box aethetic */
+
 .character {
 	background-color: #FFFFFF;
 	width: 220px;
@@ -54,6 +57,7 @@ img {
 	margin-left: 50px;
 	margin-top: 5px;
 	display: inline-block;
+	opacity: .5;
 }
 
 button {
@@ -61,16 +65,16 @@ button {
 	background-color: #D9AF8B;
 	margin: 10px 50px;
 }
-/* establishes no maringins for the win/loss button */
+
 .winButton {
 	margin: 0px 0px;
 }
 
-/* sets background color for opponent */
+
 .selectedOpponent {
 	background: #e85d5d;
 }
-/* sets hero background color */
+
 .selectedHero {
 	background-color: #B8F4CC;
 }
